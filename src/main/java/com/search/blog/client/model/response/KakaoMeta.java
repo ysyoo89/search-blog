@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class KakaoMeta {
-    private Integer totalCount;
-    private Integer pageableCount;
-    private Boolean isEnd;
+    private Integer total_count;
+    private Integer pageable_count;
+    private Boolean is_end;
 }

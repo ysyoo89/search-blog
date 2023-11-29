@@ -15,13 +15,14 @@ import static com.search.blog.entity.QSearchEntity.searchEntity;
 
 @Repository
 @RequiredArgsConstructor
-public class SearchRepositoryImpl implements SearchRepositoryCustom{
-    private JPAQueryFactory queryFactory;
+public class SearchRepositoryImpl implements SearchRepositoryCustom {
+    private final JPAQueryFactory queryFactory;
 
     @Override
     public List<WordSearchModel> getWordSearch() {
         StringPath aliasQuantity = Expressions.stringPath("searchCount");
-        return queryFactory.select(Projections.constructor(WordSearchModel.class,
+        return queryFactory.select(
+                Projections.constructor(WordSearchModel.class,
                         searchEntity.searchWord,
                         searchEntity.searchWord.count().as("searchCount")
                 ))

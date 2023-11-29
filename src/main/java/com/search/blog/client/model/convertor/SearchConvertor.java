@@ -18,7 +18,7 @@ public interface SearchConvertor {
     BlogSearchApiRequest toRequest(BlogSearchRequest blogSearchRequest);
 
     @Mappings({
-            @Mapping(target = "totalPage", source = "meta.totalCount"),
+            @Mapping(target = "totalPage", source = "meta.total_count"),
             @Mapping(target = "contents", source = "documents")
     })
     BlogSearchResponse toResponse(BlogSearchApiResponse blogSearchApiResponse);
