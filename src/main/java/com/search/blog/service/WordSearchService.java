@@ -19,13 +19,6 @@ public class WordSearchService {
     private final SearchRepository searchRepository;
 
     public List<WordSearchModel> getWordSearch() {
-        List<WordSearchModel> response;
-        try {
-            response = searchRepository.getWordSearch();
-        } catch (Exception e) {
-            log.error(e.getMessage());
-            throw new CustomException(ErrorCode.INTERNAL_SERVER_ERROR);
-        }
-        return response;
+        return searchRepository.getWordSearch();
     }
 }
